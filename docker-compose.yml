@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  socks5:
+    restart: always
+    image: hintro/wg-proxy
+    env_file: .env
+    ports:
+      - "1080:1080"
