@@ -24,6 +24,11 @@ func main() {
 
 	//Initialize socks5 config
 	socsk5conf := &socks5.Config{
+		Upstreams: &socks5.Upstreams{
+			Resolver: &socks.SOCKS5{
+				Addr: "127.0.0.1:51820", // Wireguard interface address
+			},
+		},
 		Logger: log.New(os.Stdout, "", log.LstdFlags),
 	}
 
